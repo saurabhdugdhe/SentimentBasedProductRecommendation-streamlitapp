@@ -41,5 +41,7 @@ def GetSentimentRecommendations(user):
 
         sorted_products = temp_grouped.sort_values('positive_sentiment_percent', ascending=False)[0:20]
         
-        return sorted_products
+        return pd.merge(data, sorted_products, on="id")[
+            ["name", "brand", "positive_sentiment_percent"]].drop_duplicates().sort_values(
+            ['positive_sentiment_percent', 'name'], ascending=[False, True])
         
