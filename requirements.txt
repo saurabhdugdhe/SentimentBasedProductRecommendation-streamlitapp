@@ -2,4 +2,4 @@ scikit-learn
 pandas
 numpy
 sklearn
-xgboost
+xgboost==1.5.0
